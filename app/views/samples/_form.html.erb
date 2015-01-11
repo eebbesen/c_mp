@@ -1,0 +1,49 @@
+<%= form_for(@sample) do |f| %>
+  <% if @sample.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sample.errors.count, "error") %> prohibited this sample from being saved:</h2>
+
+      <ul>
+      <% @sample.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.time_select :time %>
+  </div>
+  <div class="field">
+    <%= f.label :secchi_depth %><br>
+    <%= f.text_field :secchi_depth %>
+  </div>
+  <div class="field">
+    <%= f.label :is_bottom %><br>
+    <%= f.check_box :is_bottom %>
+  </div>
+  <div class="field">
+    <%= f.label :physical_appearance %><br>
+    <%= f.number_field :physical_appearance %>
+  </div>
+  <div class="field">
+    <%= f.label :recreational_suitability %><br>
+    <%= f.number_field :recreational_suitability %>
+  </div>
+  <div class="field">
+    <%= f.label :water_color %><br>
+    <%= f.text_field :water_color %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

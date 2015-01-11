@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150111162923) do
+ActiveRecord::Schema.define(version: 20150111230425) do
 
   create_table "citizens", force: :cascade do |t|
     t.string   "first_name"
@@ -33,6 +33,19 @@ ActiveRecord::Schema.define(version: 20150111162923) do
     t.boolean  "previous_year"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "samples", force: :cascade do |t|
+    t.date     "date"
+    t.time     "time"
+    t.float    "secchi_depth"
+    t.boolean  "is_bottom"
+    t.integer  "physical_appearance"
+    t.integer  "recreational_suitability"
+    t.string   "water_color"
+    t.text     "notes"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end

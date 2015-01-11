@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @sample.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @sample.time %>
+</p>
+
+<p>
+  <strong>Secchi depth:</strong>
+  <%= @sample.secchi_depth %>
+</p>
+
+<p>
+  <strong>Is bottom:</strong>
+  <%= @sample.is_bottom %>
+</p>
+
+<p>
+  <strong>Physical appearance:</strong>
+  <%= @sample.physical_appearance %>
+</p>
+
+<p>
+  <strong>Recreational suitability:</strong>
+  <%= @sample.recreational_suitability %>
+</p>
+
+<p>
+  <strong>Water color:</strong>
+  <%= @sample.water_color %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @sample.notes %>
+</p>
+
+<%= link_to 'Edit', edit_sample_path(@sample) %> |
+<%= link_to 'Back', samples_path %>
