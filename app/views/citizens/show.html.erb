@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @citizen.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @citizen.last_name %>
+</p>
+
+<p>
+  <strong>Clmp number:</strong>
+  <%= @citizen.clmp_number %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @citizen.email %>
+</p>
+
+<p>
+  <strong>Phone 1:</strong>
+  <%= @citizen.phone_1 %>
+</p>
+
+<p>
+  <strong>Phone 2:</strong>
+  <%= @citizen.phone_2 %>
+</p>
+
+<%= link_to 'Edit', edit_citizen_path(@citizen) %> |
+<%= link_to 'Back', citizens_path %>

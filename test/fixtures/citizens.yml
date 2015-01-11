@@ -4,6 +4,7 @@ one:
   first_name: MyString
   last_name: MyString
   clmp_number: 1
+  email: MyString
   phone_1: MyString
   phone_2: MyString
 
@@ -11,5 +12,6 @@ two:
   first_name: MyString
   last_name: MyString
   clmp_number: 1
+  email: MyString
   phone_1: MyString
   phone_2: MyString
