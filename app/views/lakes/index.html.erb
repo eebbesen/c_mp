@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Lakes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lake name</th>
+      <th>Lake number</th>
+      <th>Site number</th>
+      <th>County</th>
+      <th>Sample depth</th>
+      <th>Previous year</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lakes.each do |lake| %>
+      <tr>
+        <td><%= lake.lake_name %></td>
+        <td><%= lake.lake_number %></td>
+        <td><%= lake.site_number %></td>
+        <td><%= lake.county %></td>
+        <td><%= lake.sample_depth %></td>
+        <td><%= lake.previous_year %></td>
+        <td><%= link_to 'Show', lake %></td>
+        <td><%= link_to 'Edit', edit_lake_path(lake) %></td>
+        <td><%= link_to 'Destroy', lake, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lake', new_lake_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lake_name: MyString
+  lake_number: MyString
+  site_number: MyString
+  county: MyString
+  sample_depth: 1.5
+  previous_year: false
+
+two:
+  lake_name: MyString
+  lake_number: MyString
+  site_number: MyString
+  county: MyString
+  sample_depth: 1.5
+  previous_year: false
