@@ -1,2 +1,0 @@
-class CitizenController < ApplicationController
-end
