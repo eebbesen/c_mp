@@ -71,6 +71,6 @@ class CitizensController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def citizen_params
       params.require(:citizen).permit(:first_name, :last_name, :clmp_number, :email, 
-        :phone_1, :phone_2, :password, :password_confirmation, :lake_id, :citizen_id)
+        :phone_1, :phone_2, :password, :password_confirmation)
     end
 end
