@@ -18,7 +18,9 @@ class CitizensControllerTest < ActionController::TestCase
 
   test "should create citizen" do
     assert_difference('Citizen.count') do
-      post :create, citizen: { clmp_number: @citizen.clmp_number, email: @citizen.email, first_name: @citizen.first_name, last_name: @citizen.last_name, phone_1: @citizen.phone_1, phone_2: @citizen.phone_2 }
+      post :create, citizen: { clmp_number: @citizen.clmp_number, email: 'citizen3@mn.gov', first_name: @citizen.first_name, 
+        last_name: @citizen.last_name, phone_1: @citizen.phone_1, phone_2: @citizen.phone_2, 
+        password: 'Pa55w0Rd1', password_confirmation: 'Pa55w0Rd1' }
     end
 
     assert_redirected_to citizen_path(assigns(:citizen))
@@ -35,7 +37,8 @@ class CitizensControllerTest < ActionController::TestCase
   end
 
   test "should update citizen" do
-    patch :update, id: @citizen, citizen: { clmp_number: @citizen.clmp_number, email: @citizen.email, first_name: @citizen.first_name, last_name: @citizen.last_name, phone_1: @citizen.phone_1, phone_2: @citizen.phone_2 }
+    patch :update, id: @citizen, citizen: { clmp_number: @citizen.clmp_number, email: @citizen.email, first_name: @citizen.first_name, 
+      last_name: @citizen.last_name, phone_1: @citizen.phone_1, phone_2: @citizen.phone_2 }
     assert_redirected_to citizen_path(assigns(:citizen))
   end
 
