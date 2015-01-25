@@ -4,14 +4,16 @@ one:
   first_name: MyString
   last_name: MyString
   clmp_number: 1
-  email: MyString
+  email: citizen1@mn.gov
   phone_1: MyString
   phone_2: MyString
+  encrypted_password: Pa55w0Rd
 
 two:
   first_name: MyString
   last_name: MyString
   clmp_number: 1
-  email: MyString
+  email: citizen2@mn.gov
   phone_1: MyString
   phone_2: MyString
+  encrypted_password: Pa55w0Rd1

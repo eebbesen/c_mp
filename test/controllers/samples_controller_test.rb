@@ -3,6 +3,8 @@ require 'test_helper'
 class SamplesControllerTest < ActionController::TestCase
   setup do
     @sample = samples(:one)
+    @citizen = citizens(:one)
+    sign_in @citizen
   end
 
   test "should get index" do

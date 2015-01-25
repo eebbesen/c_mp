@@ -1,5 +1,6 @@
 class CitizensController < ApplicationController
   before_action :set_citizen, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_citizen!
 
   # GET /citizens
   # GET /citizens.json
@@ -69,6 +70,7 @@ class CitizensController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def citizen_params
-      params.require(:citizen).permit(:first_name, :last_name, :clmp_number, :email, :phone_1, :phone_2)
+      params.require(:citizen).permit(:first_name, :last_name, :clmp_number, :email, 
+        :phone_1, :phone_2, :password, :password_confirmation, :lake_id, :citizen_id)
     end
 end
