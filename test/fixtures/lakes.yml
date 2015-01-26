@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  lake_name: MyString
-  lake_number: MyString
-  site_number: MyString
-  county: MyString
-  sample_depth: 1.5
+lake_one:
+  lake_name: Mille Lacs
+  lake_number: 88-98678
+  site_number: 72
+  county: Crow Wing
+  sample_depth: 21.2
   previous_year: false
 
-two:
-  lake_name: MyString
-  lake_number: MyString
-  site_number: MyString
-  county: MyString
+lake_two:
+  lake_name: Phalen
+  lake_number: 00-912345
+  site_number: 876
+  county: Ramsay
   sample_depth: 1.5
   previous_year: false

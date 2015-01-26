@@ -29,7 +29,7 @@
         <td><%= sample.recreational_suitability %></td>
         <td><%= sample.water_color %></td>
         <td><%= sample.notes %></td>
-        <td><%= sample.lake_id %></td>
+        <td><%= Lake.find(sample.lake_id).lake_name %></td>
         <td><%= link_to 'Show', sample %></td>
         <td><%= link_to 'Edit', edit_sample_path(sample) %></td>
         <td><%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' } %></td>

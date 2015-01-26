@@ -2,7 +2,7 @@ require 'test_helper'
 
 class LakesControllerTest < ActionController::TestCase
   setup do
-    @lake = lakes(:one)
+    @lake = lakes(:lake_one)
   end
 
   test "should get index" do

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CitizensControllerTest < ActionController::TestCase
   setup do
-    @citizen = citizens(:one)
+    @citizen = citizens(:citizen_one)
     sign_in @citizen
   end
 

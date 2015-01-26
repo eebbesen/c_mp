@@ -70,6 +70,7 @@ class SamplesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sample_params
-      params.require(:sample).permit(:date, :time, :secchi_depth, :is_bottom, :physical_appearance, :recreational_suitability, :water_color, :notes)
+      params.require(:sample).permit(:date, :time, :secchi_depth, :is_bottom, :physical_appearance, 
+        :recreational_suitability, :water_color, :notes, :lake_id, :citizen_id)
     end
 end

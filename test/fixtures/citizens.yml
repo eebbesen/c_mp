@@ -1,6 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+citizen_one:
   first_name: MyString
   last_name: MyString
   clmp_number: 1
@@ -9,7 +9,7 @@ one:
   phone_2: MyString
   encrypted_password: Pa55w0Rd
 
-two:
+citizen_two:
   first_name: MyString
   last_name: MyString
   clmp_number: 1

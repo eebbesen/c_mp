@@ -2,9 +2,12 @@ require 'test_helper'
 
 class SamplesControllerTest < ActionController::TestCase
   setup do
-    @sample = samples(:one)
-    @citizen = citizens(:one)
-    sign_in @citizen
+    @sample = samples(:sample_one)
+    citizen = citizens(:citizen_one)
+    lake = lakes(:lake_one)
+    @sample.lake_id = lake.id
+    @sample.citizen_id = citizen.id
+    sign_in citizen
   end
 
   test "should get index" do

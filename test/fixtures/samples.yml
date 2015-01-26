@@ -1,6 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+sample_one:
   date: 2015-01-11
   time: 2015-01-11 17:04:25
   secchi_depth: 1.5
@@ -9,13 +9,17 @@ one:
   recreational_suitability: 1
   water_color: MyString
   notes: MyText
+  citizen: citizen_one
+  lake: lake_one
 
-two:
+sample_two:
   date: 2015-01-11
   time: 2015-01-11 17:04:25
-  secchi_depth: 1.5
-  is_bottom: false
+  secchi_depth: 2.9
+  is_bottom: true
   physical_appearance: 1
   recreational_suitability: 1
   water_color: MyString
   notes: MyText
+  citizen: citizen_two
+  lake: lake_two
