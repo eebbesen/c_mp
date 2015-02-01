@@ -18,15 +18,13 @@
   <tbody>
     <% @lakes.each do |lake| %>
       <tr>
-        <td><%= lake.lake_name %></td>
+        <td><%= link_to lake.lake_name, lake %></td>
         <td><%= lake.lake_number %></td>
         <td><%= lake.site_number %></td>
         <td><%= lake.county %></td>
         <td><%= lake.sample_depth %></td>
         <td><%= lake.previous_year %></td>
-        <td><%= link_to 'Show', lake %></td>
-        <td><%= link_to 'Edit', edit_lake_path(lake) %></td>
-        <td><%= link_to 'Destroy', lake, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Samples', samples_path(citizen_id: current_citizen.id, lake_id: lake.id) %></td>
       </tr>
     <% end %>
   </tbody>

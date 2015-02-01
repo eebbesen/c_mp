@@ -5,7 +5,7 @@ class SamplesController < ApplicationController
   # GET /samples
   # GET /samples.json
   def index
-    @samples = Sample.all
+    @samples = Sample.where(citizen_id: current_citizen.id, lake_id: params[:lake_id])
   end
 
   # GET /samples/1
@@ -26,6 +26,7 @@ class SamplesController < ApplicationController
   # POST /samples.json
   def create
     @sample = Sample.new(sample_params)
+    @sample.citizen_id = current_citizen.id
 
     respond_to do |format|
       if @sample.save

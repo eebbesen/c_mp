@@ -3,6 +3,8 @@ require 'test_helper'
 class LakesControllerTest < ActionController::TestCase
   setup do
     @lake = lakes(:lake_one)
+    citizen = citizens(:citizen_one)
+    sign_in citizen
   end
 
   test "should get index" do
