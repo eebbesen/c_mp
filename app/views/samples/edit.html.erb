@@ -3,4 +3,4 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @sample %> |
-<%= link_to 'Back', samples_path %>
+<%= link_to 'Back', samples_path(lake_id: @sample.lake_id) %>

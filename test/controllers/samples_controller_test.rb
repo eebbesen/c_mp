@@ -4,20 +4,20 @@ class SamplesControllerTest < ActionController::TestCase
   setup do
     @sample = samples(:sample_one)
     citizen = citizens(:citizen_one)
-    lake = lakes(:lake_one)
-    @sample.lake_id = lake.id
+    @lake = lakes(:lake_one)
+    @sample.lake_id = @lake.id
     @sample.citizen_id = citizen.id
     sign_in citizen
   end
 
   test "should get index" do
-    get :index
+    get :index, {lake_id: @lake.id}
     assert_response :success
     assert_not_nil assigns(:samples)
   end
 
   test "should get new" do
-    get :new
+    get :new, {lake_id: @lake.id}
     assert_response :success
   end
 

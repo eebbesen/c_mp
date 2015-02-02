@@ -6,6 +6,7 @@ class SamplesController < ApplicationController
   # GET /samples.json
   def index
     @samples = Sample.where(citizen_id: current_citizen.id, lake_id: params[:lake_id])
+    @lake = Lake.find(params[:lake_id])
   end
 
   # GET /samples/1
@@ -15,7 +16,8 @@ class SamplesController < ApplicationController
 
   # GET /samples/new
   def new
-    @sample = Sample.new
+    @lake = Lake.find(params[:lake_id])
+    @sample = Sample.new(lake_id: @lake.id)
   end
 
   # GET /samples/1/edit
