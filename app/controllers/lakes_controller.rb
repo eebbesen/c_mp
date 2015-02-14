@@ -1,5 +1,6 @@
 class LakesController < ApplicationController
   before_action :set_lake, only: [:show, :edit, :update, :destroy]
+  before_action :admin_check, only: [:create, :destroy, :edit, :new, :update]
 
   # GET /lakes
   # GET /lakes.json
@@ -58,6 +59,13 @@ class LakesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to lakes_url, notice: 'Lake was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def admin_check
+    unless admin_signed_in?
+      redirect_to action: 'index'
+      return
     end
   end
 
