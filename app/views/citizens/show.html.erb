@@ -1,13 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>First name:</strong>
-  <%= @citizen.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @citizen.last_name %>
+  <strong>Name:</strong>
+  <%= "#{@citizen.first_name} #{@citizen.last_name}" %>
 </p>
 
 <p>

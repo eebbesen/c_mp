@@ -5,8 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
+      <th>Name</th>
       <th>Clmp number</th>
       <th>Email</th>
       <th>Phone 1</th>
@@ -18,15 +17,11 @@
   <tbody>
     <% @citizens.each do |citizen| %>
       <tr>
-        <td><%= citizen.first_name %></td>
-        <td><%= citizen.last_name %></td>
+        <td><%= link_to "#{citizen.first_name} #{citizen.last_name}", edit_citizen_path(citizen) %></td>
         <td><%= citizen.clmp_number %></td>
         <td><%= citizen.email %></td>
         <td><%= citizen.phone_1 %></td>
         <td><%= citizen.phone_2 %></td>
-        <td><%= link_to 'Show', citizen %></td>
-        <td><%= link_to 'Edit', edit_citizen_path(citizen) %></td>
-        <td><%= link_to 'Destroy', citizen, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Citizen', new_citizen_path %>
+<!-- <%= link_to 'New Citizen', new_citizen_path %> -->
