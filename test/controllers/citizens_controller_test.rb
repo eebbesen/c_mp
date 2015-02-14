@@ -6,10 +6,10 @@ class CitizensControllerTest < ActionController::TestCase
     sign_in @citizen
   end
 
-  test "should get index" do
+  test "should get index but only logged in user" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:citizens)
+    assert_equal @citizen.id, assigns(:citizens).first.id
   end
 
   test "should get new" do

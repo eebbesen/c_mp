@@ -4,7 +4,9 @@ class CitizensController < ApplicationController
   # GET /citizens
   # GET /citizens.json
   def index
-    @citizens = Citizen.all
+    @citizens = Citizen.where(id: current_citizen)
+    # redirect_to citizens_path, action: show, id: current_citizen
+    # this is giving infinite loop (according to chrome)
   end
 
   # GET /citizens/1
