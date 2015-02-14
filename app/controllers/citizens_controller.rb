@@ -1,6 +1,5 @@
 class CitizensController < ApplicationController
   before_action :set_citizen, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_citizen!
 
   # GET /citizens
   # GET /citizens.json

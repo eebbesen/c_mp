@@ -1,6 +1,5 @@
 class SamplesController < ApplicationController
   before_action :set_sample, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_citizen!
 
   # GET /samples
   # GET /samples.json
