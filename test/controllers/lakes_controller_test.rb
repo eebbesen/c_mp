@@ -30,7 +30,7 @@ class LakesControllerTest < ActionController::TestCase
     assert_difference('Lake.count') do
       sign_out @citizen
       sign_in @admin
-      post :create, lake: { county: @lake.county, lake_name: @lake.lake_name, lake_number: @lake.lake_number, previous_year: @lake.previous_year, sample_depth: @lake.sample_depth, site_number: @lake.site_number }
+      post :create, lake: { county: @lake.county, lake_name: @lake.lake_name, lake_number: @lake.lake_number, site_number: @lake.site_number }
     end
 
     assert_redirected_to lake_path(assigns(:lake))
@@ -38,7 +38,7 @@ class LakesControllerTest < ActionController::TestCase
 
   test "should not create lake when not admin" do
     assert_no_difference('Lake.count') do
-      post :create, lake: { county: @lake.county, lake_name: @lake.lake_name, lake_number: @lake.lake_number, previous_year: @lake.previous_year, sample_depth: @lake.sample_depth, site_number: @lake.site_number }
+      post :create, lake: { county: @lake.county, lake_name: @lake.lake_name, lake_number: @lake.lake_number, site_number: @lake.site_number }
     end
 
     assert_redirected_to lakes_path
@@ -64,12 +64,12 @@ class LakesControllerTest < ActionController::TestCase
   test "should update lake if admin" do
     sign_out @citizen
     sign_in @admin
-    patch :update, id: @lake, lake: { county: @lake.county, lake_name: @lake.lake_name, lake_number: @lake.lake_number, previous_year: @lake.previous_year, sample_depth: @lake.sample_depth, site_number: @lake.site_number }
+    patch :update, id: @lake, lake: { county: @lake.county, lake_name: @lake.lake_name, lake_number: @lake.lake_number, site_number: @lake.site_number }
     assert_redirected_to lake_path(assigns(:lake))
   end
 
   test "should not update lake if not admin" do
-    patch :update, id: @lake, lake: { county: @lake.county, lake_name: @lake.lake_name, lake_number: @lake.lake_number, previous_year: @lake.previous_year, sample_depth: @lake.sample_depth, site_number: @lake.site_number }
+    patch :update, id: @lake, lake: { county: @lake.county, lake_name: @lake.lake_name, lake_number: @lake.lake_number,site_number: @lake.site_number }
     assert_redirected_to lakes_path
   end
 

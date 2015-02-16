@@ -9,7 +9,6 @@
       <th>Lake number</th>
       <th>Site number</th>
       <th>County</th>
-      <th>Sample depth</th>
       <th>Previous year</th>
       <th colspan="3"></th>
     </tr>
@@ -22,9 +21,10 @@
         <td><%= lake.lake_number %></td>
         <td><%= lake.site_number %></td>
         <td><%= lake.county %></td>
-        <td><%= lake.sample_depth %></td>
-        <td><%= lake.previous_year %></td>
-        <td><%= link_to 'Samples', samples_path(citizen_id: current_citizen.id, lake_id: lake.id) %></td>
+        <td></td>
+        <% if current_citizen %>
+          <td><%= link_to 'Samples', samples_path(citizen_id: current_citizen.id, lake_id: lake.id) %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,6 @@
 
 <br>
 
-<%= link_to 'New Lake', new_lake_path %>
+<% if current_admin %>
+  <%= link_to 'New Lake', new_lake_path %>
+<% end %>

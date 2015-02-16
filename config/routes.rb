@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :citizen_lakes
+
   devise_for :admins
   devise_for :citizens
   resources :samples

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+citizen_lake_one:
+  previous_year: false
+  citizen_id: citizen_one
+  lake_id: lake_one
+
+citizen_lake_two:
+  previous_year: true
+  citizen_id: citizen_one
+  lake_id: lake_two

@@ -1,0 +1,21 @@
+<%= form_for(@citizen_lake) do |f| %>
+  <% if @citizen_lake.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@citizen_lake.errors.count, "error") %> prohibited this citizen_lake from being saved:</h2>
+
+      <ul>
+      <% @citizen_lake.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :previous_year %><br>
+    <%= f.check_box :previous_year %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

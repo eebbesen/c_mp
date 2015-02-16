@@ -77,6 +77,6 @@ class LakesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lake_params
-      params.require(:lake).permit(:lake_name, :lake_number, :site_number, :county, :sample_depth, :previous_year)
+      params.require(:lake).permit(:lake_name, :lake_number, :site_number, :county)
     end
 end

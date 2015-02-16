@@ -11,6 +11,7 @@ sample_one:
   notes: MyText
   citizen: citizen_one
   lake: lake_one
+  sample_depth: 21.2
 
 sample_two:
   date: 2015-01-11
@@ -23,3 +24,4 @@ sample_two:
   notes: MyText
   citizen: citizen_two
   lake: lake_two
+  sample_depth: 2.45

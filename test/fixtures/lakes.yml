@@ -5,13 +5,9 @@ lake_one:
   lake_number: 88-98678
   site_number: 72
   county: Crow Wing
-  sample_depth: 21.2
-  previous_year: false
 
 lake_two:
   lake_name: Phalen
   lake_number: 00-912345
   site_number: 876
-  county: Ramsay
-  sample_depth: 1.5
-  previous_year: false
+  county: Ramsey

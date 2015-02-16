@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150214191421) do
+ActiveRecord::Schema.define(version: 20150214223930) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 20150214191421) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "citizen_lakes", force: :cascade do |t|
+    t.integer  "lake_id"
+    t.integer  "citizen_id"
+    t.boolean  "previous_year"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "citizen_lakes", ["citizen_id"], name: "index_citizen_lakes_on_citizen_id"
+  add_index "citizen_lakes", ["lake_id"], name: "index_citizen_lakes_on_lake_id"
 
   create_table "citizens", force: :cascade do |t|
     t.string   "first_name"
@@ -59,10 +70,8 @@ ActiveRecord::Schema.define(version: 20150214191421) do
     t.string   "lake_number"
     t.string   "site_number"
     t.string   "county"
-    t.float    "sample_depth"
-    t.boolean  "previous_year"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "samples", force: :cascade do |t|
@@ -78,6 +87,7 @@ ActiveRecord::Schema.define(version: 20150214191421) do
     t.text     "notes"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.float    "sample_depth"
   end
 
   add_index "samples", ["citizen_id"], name: "index_samples_on_citizen_id"

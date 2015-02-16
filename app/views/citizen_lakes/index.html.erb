@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Citizen Lakes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Previous year</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @citizen_lakes.each do |citizen_lake| %>
+      <tr>
+        <td><%= citizen_lake.previous_year %></td>
+        <td><%= link_to 'Show', citizen_lake %></td>
+        <td><%= link_to 'Edit', edit_citizen_lake_path(citizen_lake) %></td>
+        <td><%= link_to 'Destroy', citizen_lake, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Citizen lake', new_citizen_lake_path %>
