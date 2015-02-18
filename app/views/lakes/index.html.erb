@@ -9,19 +9,18 @@
       <th>Lake number</th>
       <th>Site number</th>
       <th>County</th>
-      <th>Previous year</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @lakes.each do |lake| %>
+      <% @citizen_lake = CitizenLake.where(citizen_id: current_citizen.id, lake_id: lake.id).first %>
       <tr>
         <td><%= link_to lake.lake_name, lake %></td>
         <td><%= lake.lake_number %></td>
         <td><%= lake.site_number %></td>
         <td><%= lake.county %></td>
-        <td></td>
         <% if current_citizen %>
           <td><%= link_to 'Samples', samples_path(citizen_id: current_citizen.id, lake_id: lake.id) %></td>
         <% end %>

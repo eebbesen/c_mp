@@ -14,7 +14,14 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'lakes#index'
+  devise_scope :citizen do
+    unauthenticated :citizen do
+      root :to => 'devise/sessions#new', as: :unauthenticated_root
+    end
+    authenticated :citizen do
+      root :to => 'citizens#show', as: :authenticated_root
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

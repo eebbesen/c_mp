@@ -66,7 +66,7 @@ class CitizensController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_citizen
-      @citizen = Citizen.find(params[:id])
+      @citizen = current_citizen
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

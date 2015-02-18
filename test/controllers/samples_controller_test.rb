@@ -30,6 +30,19 @@ class SamplesControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to sample_path(assigns(:sample))
+
+    assert_equal 1, CitizenLake.where(lake_id: @sample.lake_id, citizen_id: @sample.citizen_id).count
+  end
+
+  test "should not create a citizen_lakes record if one already exists" do
+    assert_equal 1, CitizenLake.where(lake_id: @sample.lake_id, citizen_id: @sample.citizen_id).count
+
+    post :create, sample: { date: @sample.date, is_bottom: @sample.is_bottom, notes: @sample.notes, 
+      physical_appearance: @sample.physical_appearance, recreational_suitability: @sample.recreational_suitability, 
+      secchi_depth: @sample.secchi_depth, time: @sample.time, water_color: @sample.water_color, 
+      lake_id: @sample.lake_id, citizen_id: @sample.citizen_id}
+
+    assert_equal 1, CitizenLake.where(lake_id: @sample.lake_id, citizen_id: @sample.citizen_id).count
   end
 
   test "should show sample" do

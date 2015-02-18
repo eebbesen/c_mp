@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 citizen_one:
-  first_name: MyString
-  last_name: MyString
+  first_name: Wall
+  last_name: Eye
   clmp_number: 1
-  email: citizen1@mn.gov
-  phone_1: MyString
-  phone_2: MyString
-  encrypted_password: Pa55w0Rd
+  email: wall.eye@mn.gov
+  phone_1: 6515551212
+  phone_2: 6515551213
+  encrypted_password: $2a$10$jHcS6LLe9TynkgsXluvol.CNa/yC6O/wIOMR4OWF4gjAViGVfVFAa
 
 citizen_two:
-  first_name: MyString
-  last_name: MyString
+  first_name: Sonny
+  last_name: Fish
   clmp_number: 1
-  email: citizen2@mn.gov
-  phone_1: MyString
-  phone_2: MyString
-  encrypted_password: Pa55w0Rd1
+  email: sonny.fish@mn.gov
+  phone_1: 5075551212
+  phone_2: 5075551213
+  encrypted_password: $2a$10$04BPiYlIkeEvMakAIKyg/OXczGRHltdcxLkIoStlUzKxlywTnLOSe
