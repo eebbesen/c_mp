@@ -2,18 +2,18 @@
 <html>
 <head>
   <%= favicon_link_tag 'favicon.ico' %>
-  <title>CMp</title>
+  <title>CLMP</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <% if current_citizen %>
-    <%= link_to 'Sign out user', destroy_citizen_session_path %>
+    <%= link_to 'Sign out user', destroy_citizen_session_path, method: :delete %>
   <% end %>
 
   <% if current_admin %>
-    <%= link_to 'Sign out admin', destroy_admin_session_path %>
+    <%= link_to 'Sign out admin', destroy_admin_session_path, method: :delete %>
   <% end %>
 
   <% if !current_citizen && !current_admin %>

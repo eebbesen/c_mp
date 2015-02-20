@@ -19,7 +19,7 @@ Rails.application.routes.draw do
       root :to => 'devise/sessions#new', as: :unauthenticated_root
     end
     authenticated :citizen do
-      root :to => 'citizens#show', as: :authenticated_root
+      root :to => 'citizens#index', as: :authenticated_root
     end
   end
 

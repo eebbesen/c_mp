@@ -38,10 +38,7 @@ class SamplesController < ApplicationController
         format.json { render json: @sample.errors, status: :unprocessable_entity }
       end
 
-      # create citizen lake if it does not already exist
-      if 1 > CitizenLake.where(lake_id: @sample.lake_id, citizen_id: @sample.citizen_id).count
-        CitizenLake.create(lake_id: @sample.lake_id, citizen_id: @sample.citizen_id)
-      end
+      current_citizen.citizen_lakes.find_or_create_by(lake_id: @sample.lake_id, citizen_id: current_citizen.id)
     end
   end
 
