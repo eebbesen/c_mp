@@ -1,6 +1,5 @@
-<h1>Editing Citizen Lake</h1>
+<h1><%= Lake.find(@citizen_lake.lake_id).lake_name %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @citizen_lake %> |
-<%= link_to 'Back', citizen_lakes_path %>
+<%= link_to 'Back', samples_path(citizen_id: @citizen_lake.citizen_id, lake_id: @citizen_lake.lake_id) %>

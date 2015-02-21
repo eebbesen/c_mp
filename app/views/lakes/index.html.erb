@@ -10,6 +10,7 @@
       <th>Site number</th>
       <th>County</th>
       <th></th>
+      <th>Previous year?</th>
     </tr>
   </thead>
 
@@ -23,6 +24,8 @@
         <td><%= lake.county %></td>
         <% if current_citizen %>
           <td><%= link_to 'Samples', samples_path(citizen_id: current_citizen.id, lake_id: lake.id) %></td>
+          <% @citizen_lake = lake.citizen_lakes.where(citizen_id: current_citizen.id).first %>
+          <td><%= link_to @citizen_lake.previous_year ? 'Yes' : 'No', edit_citizen_lake_path(@citizen_lake.id) %></td>
         <% end %>
       </tr>
     <% end %>
