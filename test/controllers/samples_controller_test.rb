@@ -10,14 +10,33 @@ class SamplesControllerTest < ActionController::TestCase
     sign_in citizen
   end
 
-  test "should get index" do
+  test "should get index with lake_id" do
     get :index, {lake_id: @lake.id}
+    assert_response :success
+    assert_not_nil assigns(:samples)
+  end
+
+  test "should get index without lake_id" do
+    get :index, {lake_id: nil}
+    assert_response :success
+    assert_not_nil assigns(:samples)
+  end
+
+  test "should get index without lake_id where citizen has no samples" do
+    sign_out citizens(:citizen_one)
+    sign_in citizens(:citizen_two)
+    get :index, {lake_id: nil}
     assert_response :success
     assert_not_nil assigns(:samples)
   end
 
   test "should get new" do
     get :new, {lake_id: @lake.id}
+    assert_response :success
+  end
+
+  test "should get new without lake_id" do
+    get :new, {}
     assert_response :success
   end
 

@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Your Samples for <%= Lake.find(@lake.id).lake_name %></h1>
+<% if @lake %>
+  <h1>Your Samples for <%= Lake.find(@lake.id).lake_name %></h1>
+<% else %>
+  <h1>Your Samples</h1>
+<% end %>
 
 <table>
   <thead>
@@ -33,4 +37,8 @@
 
 <br>
 
-<%= link_to 'New Sample', new_sample_path(lake_id: @lake.id) %>
+<% if @lake %>
+  <%= link_to 'New Sample', new_sample_path(lake_id: @lake.id), class: "button large expand" %>
+<% else %>
+  <%= link_to 'New Sample', new_sample_path, class: "button large expand" %>
+<% end %>

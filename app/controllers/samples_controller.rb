@@ -4,8 +4,13 @@ class SamplesController < ApplicationController
   # GET /samples
   # GET /samples.json
   def index
-    @samples = Sample.where(citizen_id: current_citizen.id, lake_id: params[:lake_id])
-    @lake = Lake.find(params[:lake_id])
+    if params[:lake_id]
+      @samples = Sample.where(citizen_id: current_citizen.id, lake_id: params[:lake_id])
+      @lake = Lake.find(params[:lake_id])
+    else
+      @samples = Sample.where(citizen_id: current_citizen.id)
+      @lake = nil
+    end
   end
 
   # GET /samples/1
@@ -15,8 +20,12 @@ class SamplesController < ApplicationController
 
   # GET /samples/new
   def new
-    @lake = Lake.find(params[:lake_id])
-    @sample = Sample.new(lake_id: @lake.id)
+    if params[:lake_id]
+      @lake = Lake.find(params[:lake_id])
+      @sample = Sample.new(lake_id: @lake.id)
+    else 
+      @sample = Sample.new
+    end
   end
 
   # GET /samples/1/edit

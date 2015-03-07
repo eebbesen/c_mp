@@ -1,5 +1,13 @@
-<h1>New Sample for <%=@lake.lake_name%></h1>
+<% if @lake %>
+  <h1>New Sample for <%=@lake.lake_name%></h1>
+<% else %>
+  <h1>New Sample</h1>
+<% end %>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', samples_path(lake_id: @lake.id) %>
+<% if @lake %>
+  <%= link_to 'Back', samples_path(lake_id: @lake.id), class: "button large expand" %>
+<% else %>
+  <%= link_to 'Back', samples_path, class: "button large expand" %>
+<% end %>
